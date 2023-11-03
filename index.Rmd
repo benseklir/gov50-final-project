@@ -6,7 +6,10 @@ output:
   distill::distill_article:
     self_contained: false
 ---
-
+```{r setup, include = FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(echo = FALSE)
+```
 
 
 ## Project thoughts
@@ -24,9 +27,8 @@ How does the ownership type of nursing homes affect their quality? I hypothesize
 ## Data visualization
 
 ```{r}
-library(tidyverse)
-```
-```{r}
+nursing_homes <- read_csv("NH_ProviderInfo_Oct2023.csv")
+
 nursing_homes <- nursing_homes |>
   mutate(Umbrella = case_when(
     `Ownership Type` %in% c("For profit - Corporation", "For profit - Individual", "For profit - Limited Liability company", "For profit - Partnership") ~ "For-profit",
@@ -36,18 +38,13 @@ nursing_homes <- nursing_homes |>
   ))
 
 selected_columns <-  nursing_homes |> select(c('Provider Name','Umbrella','Overall Rating'))
-print(selected_columns)
-```
 
-
-```{r}
 rating_table <- selected_columns |>
   group_by(Umbrella) |>
   summarize(
     avg_overall_rating = mean(`Overall Rating`, na.rm = TRUE)
   )
 print(rating_table)
-knitr::kable(rating_table, col.names = c("Umbrella", "Mean Overall Rating"))
 ```
 
 
