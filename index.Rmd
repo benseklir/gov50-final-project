@@ -34,9 +34,14 @@ nursing_homes <- nursing_homes |>
     `Ownership Type` %in% c("Government - Federal", "Government - State", "Government - County", "Government - City/county", "Government - City", "Government - Hospital district") ~ "Government",
     TRUE ~ "Other"
   ))
+
+selected_columns <-  nursing_homes |> select(c('Provider Name','Umbrella','Overall Rating'))
+print(selected_columns)
 ```
+
+
 ```{r}
-rating_table <- nursing_homes |>
+rating_table <- selected_columns |>
   group_by(Umbrella) |>
   summarize(
     avg_overall_rating = mean(`Overall Rating`, na.rm = TRUE)
