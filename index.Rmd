@@ -44,8 +44,8 @@ rating_table <- selected_columns |>
   summarize(
     avg_overall_rating = mean(`Overall Rating`, na.rm = TRUE)
   )
-print(rating_table)
 ```
+
 ```{r}
 ggplot(rating_table, aes(x = Umbrella, y = avg_overall_rating, fill = Umbrella)) +
   geom_col() +
@@ -55,3 +55,13 @@ ggplot(rating_table, aes(x = Umbrella, y = avg_overall_rating, fill = Umbrella))
 ```
 
 
+
+## Analysis
+
+```{r}
+knitr::kable(
+  rating_table,
+  col.names = c("Umbrella", "Average Overall Rating")
+)
+```
+The results reveal that, on average, nursing homes operated by for-profit organizations provide worse quality of care than those operated by non-profit organizations and the government. For-profit nursing homes received an average of 2.64/5 stars. Nursing homes operated by the government performed significantly better, receiving an average rating of 3.26/5, approximately 12.3% more stars than for-profit nursing homes received. Non-profit nursing homes performed the best of the three ownership types, receiving an average rating of 3.45/5 stars. 
