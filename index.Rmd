@@ -46,5 +46,12 @@ rating_table <- selected_columns |>
   )
 print(rating_table)
 ```
+```{r}
+ggplot(rating_table, aes(x = Umbrella, y = avg_overall_rating, fill = Umbrella)) +
+  geom_col() +
+  labs(x = "Ownership Type",
+       y = "Average Overall Rating",
+       title = "Average Overall Rating of Nursing Homes by Ownership Type")
+```
 
 
