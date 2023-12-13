@@ -65,3 +65,11 @@ knitr::kable(
 )
 ```
 The results reveal that, on average, nursing homes operated by for-profit organizations provide worse quality of care than those operated by non-profit organizations and the government. For-profit nursing homes received an average of 2.64/5 stars. Nursing homes operated by the government performed significantly better, receiving an average rating of 3.26/5, approximately 12.3% more stars than for-profit nursing homes received. Non-profit nursing homes performed the best of the three ownership types, receiving an average rating of 3.45/5 stars. 
+
+```{r}
+lm_model <- lm(`Overall Rating` ~ Umbrella + `State` + `Number of Certified Beds` + `Reported Licensed Staffing Hours per Resident per Day`, data = nursing_homes)
+modelsummary::modelsummary(lm_model, statistic = c("s.e. = {std.error}",
+                                                   "p = {p.value}"), gof_map = c("nobs", "r.squared", "adj.r.squared"))
+```
+## Introduction
+In the realm of healthcare, the quality of care provided in nursing homes is a critical concern, particularly given the vulnerable population they serve. This project delves into a pivotal research question: "How does the ownership type of nursing homes affect their quality of care?" At the heart of this inquiry lies the hypothesis that nursing homes operated by for-profit organizations provide a lower quality of care than those compared to those managed by the government and non-profit entities. Understanding the impact of ownership on care quality an inform policy decisions, guide regulatory frameworks, and ultimately enhance the well-being of elderly residents. By scrutinizing the intersection between ownership type and care quality, this project aims to contribute to the ongoing discourse on optimizing healthcare in eldercare facilities. 
