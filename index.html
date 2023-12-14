@@ -1544,6 +1544,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <table>
+<caption><span id="tab:unnamed-chunk-6">Table 1: </span>Average Overall Ratings of Nursing Homes by Ownership Type</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Umbrella</th>
@@ -1570,6 +1571,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>In addition to this visualization, I performed a regression analysis for a more nuanced understanding of this relationship. The regression analysis goes beyond the barplot by controlling for three additional factors in an attempt to isolate the effect of ownership type on the quality of care. These three factors were <code>State</code>, <code>Number of Certified Beds</code>, and <code>Reported Licensed Staffing Hours per Resident per Day</code>. I thought that the quality of care might vary by state due to differences in regulation, funding, and availability of skilled staff. In addition, I wanted to control for the size of the facility (for which I used number of certified beds as a proxy) because I thought that larger facilities might have different management practices, resources, and staffing levels, all of which would impact the quality of care. Lastly, I wanted to control for staffing levels of skilled nurses because I assumed that higher levels were associated with better care.</p>
 <div class="layout-chunk" data-layout="l-body">
 <table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-7">Table 2: </span>Regression Analysis of Factors Affecting Nursing Home Overall Rating
+</caption>
 <thead>
 <tr>
 <th style="text-align:left;">

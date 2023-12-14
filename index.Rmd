@@ -65,7 +65,8 @@ ggplot(rating_table, aes(x = Umbrella, y = avg_overall_rating, fill = Umbrella))
 knitr::kable(
   rating_table,
   col.names = c("Umbrella", "Average Overall Rating"),
-  digits = 2
+  digits = 2,
+  caption = "Average Overall Ratings of Nursing Homes by Ownership Type"
 )
 ```
 The bar plot depicts the mean overall ratings for nursing homes categorized by their ownership type. The corresponding table below the plot provides the exact numerical values of these average ratings. From the plot, it is apparent that non-profit nursing homes have the highest average overall rating (3.44/5 stars), followed by government (3.26/5 stars), and then for-profit nursing homes have the lowest average rating (2.64/5 stars) among the three categories.
@@ -75,7 +76,8 @@ In addition to this visualization, I performed a regression analysis for a more 
 ```{r}
 lm_model <- lm(`Overall Rating` ~ Umbrella + `State` + `Number of Certified Beds` + `Reported Licensed Staffing Hours per Resident per Day`, data = nursing_homes)
 modelsummary::modelsummary(lm_model, statistic = c("s.e. = {std.error}",
-                                                   "p = {p.value}"), gof_map = c("nobs", "r.squared", "adj.r.squared"))
+                                                   "p = {p.value}"), gof_map = c("nobs", "r.squared", "adj.r.squared"),
+                           title = "Regression Analysis of Factors Affecting Nursing Home Overall Rating")
 ```
 The intercept (1.594) is the expected average overall rating for the baseline group, which in my case is for-profit nursing homes in the state of Alaska, when the `Number of Certified Beds` and `Reported Licensed Staffing Hours per Resident per Day` are zero. While it's important to note that the intercept is significant (p<0.001), it's impossible for a nursing home to have zero beds or staffing hours. Thus, the practical interpretation of the intercept is limited to being a part of the baseline against which other groups' ratings are compared.
 
