@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.24/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","NH_ProviderInfo_Oct2023.csv"]}
+  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-2-1.png","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/figure-html5/unnamed-chunk-7-1.png","index_files/figure-html5/unnamed-chunk-8-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.24/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/kePrint-0.0.1/kePrint.js","index_files/lightable-0.0.1/lightable.css","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","NH_ProviderInfo_Oct2023.csv"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1473,6 +1473,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--/radix_placeholder_distill-->
   <script src="index_files/header-attrs-2.24/header-attrs.js"></script>
+  <script src="index_files/kePrint-0.0.1/kePrint.js"></script>
+  <link href="index_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="index_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="index_files/popper-2.6.0/popper.min.js"></script>
   <link href="index_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1517,18 +1519,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<h2 id="project-thoughts">Project thoughts</h2>
-<p>I am interested in exploring data related to the effect private equity ownership of nursing homes has on quality of care. I hypothesize that there might be a correlation between private equity ownership of nursing homes and lower quality of care, for the cost-cutting and restructuring tactics that these firms are associated with seem antithetical to the aims of an ideal nursing home. I find this topic to be particularly timely for two reasons. First, an increasing number of nursing homes are being acquired by private equity firms. Second, Covid-19 hit many nursing homes extremely hard, and as a result, these facilities fell under intense scrutiny.</p>
-<h2 id="proposal">Proposal</h2>
-<p>How does the ownership type of nursing homes affect their quality? I hypothesize that nursing homes operated by for-profit organizations provide worse quality of care than those operated by non-profit organizations and the government. As I started to get at in my initial project thoughts above, I suspect that the reason for this comes down to the incentives of the different ownership types. I would expect that for-profit nursing homes would be looking to minimize expenses wherever possible (to maximize profit) and that the quality of care would take a hit as a result. My data, sourced from the Centers for Medicaid &amp; Medicare Services (CMS), is a list of currently active nursing homes that includes both general information about the nursing home as well as its score across a number of quality metrics. The explanatory variable of interest is whether the nursing home is operated by a for-profit organization or a non-profit organization/the government. The variable can be found under the column titled “Ownership Type”. My outcome variable a nursing home’s overall quality, which can be found under the “Overall Rating” column. This variable is measured using CMS’ “Five-Star Quality Rating System,” which assigns a nursing home an aggregate score based on the its ratings for health inspections, quality measures, and staffing, with more stars indicating higher quality. If I observe that non-profit- and government-operated nursing homes have higher average overall rating scores than for-profit facilities, this would provide support for my hypothesis. If it turns out that for-profit nursing homes have higher or similar average overall rating scores than non-profit- and government-operated facilities, this would provide evidence against my hypothesis.</p>
-<h2 id="data-visualization">Data visualization</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>In the realm of healthcare, the quality of care provided in nursing homes is a critical concern, particularly given the vulnerable population they serve. This project delves into a pivotal research question: “How does the ownership type of nursing homes affect their quality of care?” At the heart of this inquiry lies the hypothesis that nursing homes operated by for-profit organizations provide a lower quality of care than those compared to those managed by the government and non-profit entities. Understanding the impact of ownership on care quality can inform policy decisions, guide regulatory frameworks, and ultimately enhance the well-being of elderly residents. By scrutinizing the intersection between ownership type and care quality, this project aims to contribute to the ongoing discourse on optimizing healthcare in eldercare facilities.</p>
+<h2 id="data">Data</h2>
+<p>My data is sourced from the Centers for Medicaid &amp; Medicare Services (CMS), which is a federal agency within the United States Department of Health and Human Services. CMS rigorously conducts inspections and maintains records for all nursing homes within the United States. I used the dataset titled “NH_ProviderInfo_Oct2023.csv”, which is a list of 14,944 currently active nursing homes that includes both general information about the nursing home as well as its score across a number of quality metrics. My research design is cross-sectional because I am analyzing ratings and characteristics of nursing homes at a single point in time, that being October of this year. My key independent variable is one that I created, titled <code>Umbrella</code>, which refers to the type of the organization that operates the nursing home. These organizations are categorized into government, non-profit, and for-profit. To create the <code>Umbrella</code> variable, I simplified the <code>Ownership Type</code> variable that CMS provided, which specified the exact nature of the nursing home’s ownership, such as whether it was run by a for-profit corporation, individual, limited liability company, or partnership. These original detailed ownership types are typically identified through administrative records, business filings, or self-reported data by the nursing homes. By categorizing the specific types of ownership into broader groups, I could more easily investigate how these generalized ownership types relate to the overall rating of nursing homes. I felt that the overarching trends and patterns that I wanted to identify might be obscured by the granularity of the original <code>Ownership Type</code> variable. While <code>Umbrella</code> was my main predictor variable, I also analyzed how three other factors (state, facility size, and staffing levels) were associated with the overall quality rating of nursing homes. The <code>State</code> variable refers to the state in which the nursing home is located and is used as a categorical variable, with each state representing a category. The <code>Number of Certified Beds</code> is a continuous variable indicating the size of the nursing home, and is usually obtained from administrative records and regulatory filings of the nursing homes. Finally, <code>Reported Licensed Staffing Hours per Resident Per Day</code> is a continuous variable representing the staffing level, and is typically collected through mandatory reporting requirements. Licensed staffing refers to both registered nurses and licensed practical nurses.</p>
+<p>My key dependent variable is the <code>Overall Rating</code> of nursing homes. This variable is measured using CMS’ “Five-Star Quality Rating System,” which assigns a nursing home a rating between 1 and 5 stars, with more stars indicating higher quality. A nursing home’s overall rating is an aggregate score based on the its ratings for health inspections, quality measures, and staffing, which are also rated on a scale ranging from 1 to 5 stars. The health inspection ratings are calculated from surveys over the past three years, with more recent surveys being weighted more heavily. The quality measure ratings are calculated from a nursing home’s reported performance on 10 quality measures. The staffing measures are derived from third-party data.</p>
+<p>Below is a histogram that summarizes the distribution of the dependent variable.</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+</div>
+<p>The most common rating is 1, with 3,527 nursing homes receiving this score. There are 3,052 2-star nursing homes, 2,873 3-star ones, 2,639 4-star ones, and 2,699 5-star ones. The distribution of the overall ratings appears roughly uniform with a slight left skewness as indicated by the mean (2.86) being marginally lower than the median (3).</p>
+<h2 id="results">Results</h2>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+
 </div>
-<h2 id="analysis">Analysis</h2>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="index_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+</div>
 <div class="layout-chunk" data-layout="l-body">
 <table>
 <thead>
@@ -1540,20 +1553,1298 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">For-profit</td>
-<td style="text-align: right;">2.642099</td>
+<td style="text-align: right;">2.64</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Government</td>
-<td style="text-align: right;">3.257543</td>
+<td style="text-align: right;">3.26</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Non-profit</td>
-<td style="text-align: right;">3.444646</td>
+<td style="text-align: right;">3.44</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>The results reveal that, on average, nursing homes operated by for-profit organizations provide worse quality of care than those operated by non-profit organizations and the government. For-profit nursing homes received an average of 2.64/5 stars. Nursing homes operated by the government performed significantly better, receiving an average rating of 3.26/5, approximately 12.3% more stars than for-profit nursing homes received. Non-profit nursing homes performed the best of the three ownership types, receiving an average rating of 3.45/5 stars.</p>
+<p>The bar plot depicts the mean overall ratings for nursing homes categorized by their ownership type. The corresponding table below the plot provides the exact numerical values of these average ratings. From the plot, it is apparent that non-profit nursing homes have the highest average overall rating (3.44/5 stars), followed by government (3.26/5 stars), and then for-profit nursing homes have the lowest average rating (2.64/5 stars) among the three categories.</p>
+<p>In addition to this visualization, I performed a regression analysis for a more nuanced understanding of this relationship. The regression analysis goes beyond the barplot by controlling for three additional factors in an attempt to isolate the effect of ownership type on the quality of care. These three factors were <code>State</code>, <code>Number of Certified Beds</code>, and <code>Reported Licensed Staffing Hours per Resident per Day</code>. I thought that the quality of care might vary by state due to differences in regulation, funding, and availability of skilled staff. In addition, I wanted to control for the size of the facility (for which I used number of certified beds as a proxy) because I thought that larger facilities might have different management practices, resources, and staffing levels, all of which would impact the quality of care. Lastly, I wanted to control for staffing levels of skilled nurses because I assumed that higher levels were associated with better care.</p>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+ (1)
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+1.594
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.320
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UmbrellaGovernment
+</td>
+<td style="text-align:center;">
+0.560
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.048
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+UmbrellaNon-profit
+</td>
+<td style="text-align:center;">
+0.592
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.028
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateAL
+</td>
+<td style="text-align:center;">
+0.833
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.328
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.011
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateAR
+</td>
+<td style="text-align:center;">
+0.881
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.328
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.007
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateAZ
+</td>
+<td style="text-align:center;">
+1.029
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.334
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.002
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateCA
+</td>
+<td style="text-align:center;">
+0.832
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.318
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.009
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateCO
+</td>
+<td style="text-align:center;">
+0.668
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.328
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.042
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateCT
+</td>
+<td style="text-align:center;">
+0.735
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.329
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.026
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateDC
+</td>
+<td style="text-align:center;">
+0.771
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.452
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.088
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateDE
+</td>
+<td style="text-align:center;">
+0.993
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.373
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.008
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateFL
+</td>
+<td style="text-align:center;">
+0.854
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.320
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.008
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateGA
+</td>
+<td style="text-align:center;">
+0.195
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.323
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.546
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateHI
+</td>
+<td style="text-align:center;">
+1.032
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.379
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.006
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateIA
+</td>
+<td style="text-align:center;">
+0.505
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.323
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.118
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateID
+</td>
+<td style="text-align:center;">
+0.966
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.348
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.006
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateIL
+</td>
+<td style="text-align:center;">
+0.454
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.320
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.155
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateIN
+</td>
+<td style="text-align:center;">
+0.537
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.321
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.094
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateKS
+</td>
+<td style="text-align:center;">
+0.432
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.325
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.183
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateKY
+</td>
+<td style="text-align:center;">
+0.446
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.326
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.171
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateLA
+</td>
+<td style="text-align:center;">
+0.036
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.326
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.912
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateMA
+</td>
+<td style="text-align:center;">
+0.620
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.323
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.055
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateMD
+</td>
+<td style="text-align:center;">
+0.473
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.328
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.149
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateME
+</td>
+<td style="text-align:center;">
+0.600
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.346
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.083
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateMI
+</td>
+<td style="text-align:center;">
+0.761
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.322
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.018
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateMN
+</td>
+<td style="text-align:center;">
+0.539
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.323
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.096
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateMO
+</td>
+<td style="text-align:center;">
+0.471
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.322
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.144
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateMS
+</td>
+<td style="text-align:center;">
+0.126
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.329
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.702
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateMT
+</td>
+<td style="text-align:center;">
+0.329
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.359
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.360
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateNC
+</td>
+<td style="text-align:center;">
+0.313
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.322
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.331
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateND
+</td>
+<td style="text-align:center;">
+0.460
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.352
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.191
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateNE
+</td>
+<td style="text-align:center;">
+0.492
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.330
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.136
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateNH
+</td>
+<td style="text-align:center;">
+0.431
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.351
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.219
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateNJ
+</td>
+<td style="text-align:center;">
+0.971
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.324
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.003
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateNM
+</td>
+<td style="text-align:center;">
+0.603
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.355
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.089
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateNV
+</td>
+<td style="text-align:center;">
+0.606
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.357
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.089
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateNY
+</td>
+<td style="text-align:center;">
+0.834
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.321
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.009
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateOH
+</td>
+<td style="text-align:center;">
+0.432
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.319
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.175
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateOK
+</td>
+<td style="text-align:center;">
+0.639
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.326
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.050
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateOR
+</td>
+<td style="text-align:center;">
+0.648
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.337
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.055
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StatePA
+</td>
+<td style="text-align:center;">
+0.462
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.320
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.148
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StatePR
+</td>
+<td style="text-align:center;">
+−1.020
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.617
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.098
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateRI
+</td>
+<td style="text-align:center;">
+0.946
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.352
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.007
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateSC
+</td>
+<td style="text-align:center;">
+0.499
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.330
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.130
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateSD
+</td>
+<td style="text-align:center;">
+0.597
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.344
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.083
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateTN
+</td>
+<td style="text-align:center;">
+0.335
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.324
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.302
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateTX
+</td>
+<td style="text-align:center;">
+0.337
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.318
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.290
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateUT
+</td>
+<td style="text-align:center;">
+0.899
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.342
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.009
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateVA
+</td>
+<td style="text-align:center;">
+0.377
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.325
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.245
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateVT
+</td>
+<td style="text-align:center;">
+0.317
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.390
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.416
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateWA
+</td>
+<td style="text-align:center;">
+0.737
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.329
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.025
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateWI
+</td>
+<td style="text-align:center;">
+0.567
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.324
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.080
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateWV
+</td>
+<td style="text-align:center;">
+0.175
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.337
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.604
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+StateWY
+</td>
+<td style="text-align:center;">
+0.507
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.390
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = 0.194
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Number of Certified Beds
+</td>
+<td style="text-align:center;">
+−0.004
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.000
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Reported Licensed Staffing Hours per Resident per Day
+</td>
+<td style="text-align:center;">
+0.614
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+s.e. = 0.021
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1.5px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1.5px">
+p = &lt;0.001
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+14306
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.182
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+0.179
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The intercept (1.594) is the expected average overall rating for the baseline group, which in my case is for-profit nursing homes in the state of Alaska, when the <code>Number of Certified Beds</code> and <code>Reported Licensed Staffing Hours per Resident per Day</code> are zero. While it’s important to note that the intercept is significant (p&lt;0.001), it’s impossible for a nursing home to have zero beds or staffing hours. Thus, the practical interpretation of the intercept is limited to being a part of the baseline against which other groups’ ratings are compared.</p>
+<p>The coefficients for <code>UmbrellaGovernment</code> and <code>UmbrellaNon-profit</code> suggest that, holding other factors constant, government and non-profit nursing homes are rated higher than for-profit ones by approximately 0.56 and 0.59 points, respectively. The size of the coefficients is practically significant, indicating that the type of ownership is associated with a noticeable difference in ratings. These coefficients are statistically significant (p&lt;0.001), suggesting that there is strong evidence to conclude that the observed positive relationship between government/non-profit nursing homes and higher overall rating is not occurring by chance. While the statistical significance gives me confidence in the reliability of these associations, the cross-sectional nature of the data limits the ability to infer direct causality. A before-and-after study whereby nursing homes changed ownership, for example, would ideally be necessary to assert causal effects.</p>
+<p>When considering the impact of states, we see varied coefficients, which imply that the location of a nursing home within the United States also influences its overall rating. For example, the coefficient for <code>StateAL</code> is 0.833 with a p-value of 0.011, suggesting that nursing homes in Alabama are rated higher than nursing homes in Alaska by approximately 0.83 points (holding all other variables constant), and that this result is statistically significant. On the other hand, the coefficient for <code>StatePR</code> (Puerto Rico) is -1.020 with a p-value of 0.098, suggesting a potential lower rating for nursing homes in Puerto Rico compared to Alaska (holding all other variables equal), but we cannot be as confident about this result because the p-value is 0.098.</p>
+<p>The coefficients for <code>Number of Certified Beds</code> and <code>Reported Licensed Staffing Hours per Resident per Day</code> are -0.004 and 0.614, respectively. Both are statistically significant (p&lt;0.001), indicating that as the number of beds increases, the overall rating slightly decreases, and as the staffing hours increase, the overall rating significantly increases. This suggests a larger facility may face challenges in maintaining higher quality care, while more staffing hours contribute positively to the quality of care.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The analysis conducted on nursing home quality ratings revealed notable insights into how different factors influence these ratings. My hypothesis that non-profit and government-owned nursing homes provide better quality of care than for-profit ones found substantial support. Based on the coefficients from my regression analysis, non-profit nursing homes have an average overall rating that is approximately 37.14% higher than for-profit ones, while government-owned nursing homes have an average rating about 35.13% higher than for-profit ones. Additionally, this model indicated that location (state) and staffing hours positively correlate with higher ratings, while larger facilities (more beds) tend to have slightly lower ratings. There are some potential limitations to my study that should not be ignored. As I mentioned in my results section, while the cross-sectional design is useful for identifying associations at a particular time, it is limited in its ability to infer causality. Additionally, there is the threat of unmeasured confounders. For instance, factors like patient demographics and facility age/infrastructure, which could influence ratings, were not included in the dataset, and therefore, were not included in my regression model. With additional resources, I believe my analysis could be enhanced by incorporating longitudinal data to track changes in nursing homes over time. This would allow me to observe how the quality of care in nursing homes evolve over time, which I could then correlate with changes in ownership. Longitudinal data would also enable me to examine lagged effects of ownership changes on quality metrics.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

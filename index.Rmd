@@ -10,38 +10,34 @@ output:
 library(tidyverse)
 knitr::opts_chunk$set(echo = FALSE)
 ```
+```{r}
+nursing_homes <- read_csv("NH_ProviderInfo_Oct2023.csv")
+```
 
 
 ## Introduction
-In the realm of healthcare, the quality of care provided in nursing homes is a critical concern, particularly given the vulnerable population they serve. This project delves into a pivotal research question: "How does the ownership type of nursing homes affect their quality of care?" At the heart of this inquiry lies the hypothesis that nursing homes operated by for-profit organizations provide a lower quality of care than those compared to those managed by the government and non-profit entities. Understanding the impact of ownership on care quality can inform policy decisions, guide regulatory frameworks, and ultimately enhance the well-being of elderly residents. By scrutinizing the intersection between ownership type and care quality, this project aims to contribute to the ongoing discourse on optimizing healthcare in eldercare facilities. 
+In the realm of healthcare, the quality of care provided in nursing homes is a critical concern, particularly given the vulnerable population they serve. This project delves into a pivotal research question: "How does the ownership type of nursing homes affect their quality of care?" At the heart of this inquiry lies the hypothesis that nursing homes operated by for-profit organizations provide a lower quality of care than those managed by the government and non-profit entities. Understanding the impact of ownership on care quality can inform policy decisions, guide regulatory frameworks, and ultimately enhance the well-being of elderly residents. By scrutinizing the intersection between ownership type and care quality, this project aims to contribute to the ongoing discourse on optimizing healthcare in eldercare facilities. 
 
 
 
 ## Data
-My data is sourced from the Centers for Medicaid & Medicare Services (CMS), which is a federal agency within the United States Department of Health and Human Services. CMS rigorously conducts inspections and maintains records for all nursing homes within the United States. I used the dataset titled "NH_ProviderInfo_Oct2023.csv", which is a list of 14,944 currently active nursing homes that includes both general information about the nursing home as well as its score across a number of quality metrics. My key independent variable is one that I created, titled `Umbrella`, which refers to the type of the organization that operates the nursing home. These organizations are categorized into government, non-profit, and for-profit. To create the `Umbrella` variable, I simplified the `Ownership Type` variable that CMS provided, which specified the exact nature of the nursing home's ownership, such as whether it was run by a for-profit corporation, individual, limited liability company, or partnership. These original detailed ownership types are typically identified through administrative records, business filings, or self-reported data by the nursing homes. By categorizing the specific types of ownership into broader groups, I could more easily investigate how these generalized ownership types relate to the overall rating of nursing homes. I felt that the overarching trends and patterns that I wanted to identify might be obscured by the granularity of the original `Ownership Type` variable. While `Umbrella` was my main predictor variable, I also analyzed how three other factors (state, facility size, and staffing levels) were associated with the overall quality rating of nursing homes. The `State` variable refers to the state in which the nursing home is located and is used as a categorical variable, with each state representing a category. The `Number of Certified Beds` is a continuous variable indicating the size of the nursing home, and is usually obtained from administrative records and regulatory filings of the nursing homes. Finally, `Reported Licensed Staffing Hours per Resident Per Day` is a continuous variable representing the staffing level, and is typically collected through mandatory reporting requirements. Licensed staffing refers to both registered nurses and licensed practical nurses. 
+My data is sourced from the Centers for Medicaid & Medicare Services (CMS), which is a federal agency within the United States Department of Health and Human Services. CMS rigorously conducts inspections and maintains records for all nursing homes within the United States. I used the dataset titled "NH_ProviderInfo_Oct2023.csv", which is a list of 14,944 currently active nursing homes that includes both general information about the nursing home as well as its score across a number of quality metrics. My research design is cross-sectional because I am analyzing ratings and characteristics of nursing homes at a single point in time, that being October of this year. My key independent variable is one that I created, titled `Umbrella`, which refers to the type of organization that operates the nursing home. These organizations are categorized into government, non-profit, and for-profit. To create the `Umbrella` variable, I simplified the `Ownership Type` variable that CMS provided, which specified the exact nature of the nursing home's ownership, such as whether it was run by a for-profit corporation, individual, limited liability company, or partnership. These original detailed ownership types are typically identified through administrative records, business filings, or self-reported data by the nursing homes. By categorizing the specific types of ownership into broader groups, I could more easily investigate how these generalized ownership types relate to the overall rating of nursing homes. I felt that the overarching trends and patterns that I wanted to identify might be obscured by the granularity of the original `Ownership Type` variable. While `Umbrella` was my main predictor variable, I also analyzed how three other factors (state, facility size, and staffing levels) were associated with the overall quality rating of nursing homes. The `State` variable refers to the state in which the nursing home is located and is used as a categorical variable, with each state representing a category. The `Number of Certified Beds` is a continuous variable indicating the size of the nursing home, and is usually obtained from administrative records and regulatory filings of the nursing homes. Finally, `Reported Licensed Staffing Hours per Resident Per Day` is a continuous variable representing the staffing level, and is typically collected through mandatory reporting requirements. Licensed staffing refers to both registered nurses and licensed practical nurses. 
 
 My key dependent variable is the `Overall Rating` of nursing homes. This variable is measured using CMS' "Five-Star Quality Rating System," which assigns a nursing home a rating between 1 and 5 stars, with more stars indicating higher quality. A nursing home's overall rating is an aggregate score based on the its ratings for health inspections, quality measures, and staffing, which are also rated on a scale ranging from 1 to 5 stars. The health inspection ratings are calculated from surveys over the past three years, with more recent surveys being weighted more heavily. The quality measure ratings are calculated from a nursing home's reported performance on 10 quality measures. The staffing measures are derived from third-party data. 
 
-Below is a histogram that summarizes the distribution of the dependent variable.  
+Below is a histogram that summarizes the distribution of the dependent variable.
+
 ```{r}
 ggplot(nursing_homes, aes(x = `Overall Rating`)) +
-  geom_histogram(binwidth = 1, fill = "dodgerblue", color = "black") +
+  geom_histogram(binwidth = 1, fill = "steelblue4", color = "skyblue1") +
   labs(x = "Overall Rating", y = "Frequency", title = "Distribution of Overall Ratings of Nursing Homes")
 ```
 The most common rating is 1, with 3,527 nursing homes receiving this score. There are 3,052 2-star nursing homes, 2,873 3-star ones, 2,639 4-star ones, and 2,699 5-star ones. The distribution of the overall ratings appears roughly uniform with a slight left skewness as indicated by the mean (2.86) being marginally lower than the median (3).
 
 
-## Proposal
-
-How does the ownership type of nursing homes affect their quality? I hypothesize that nursing homes operated by for-profit organizations provide worse quality of care than those operated by non-profit organizations and the government. As I started to get at in my initial project thoughts above, I suspect that the reason for this comes down to the incentives of the different ownership types. I would expect that for-profit nursing homes would be looking to minimize expenses wherever possible (to maximize profit) and that the quality of care would take a hit as a result. My data, sourced from the Centers for Medicaid & Medicare Services (CMS), is a list of currently active nursing homes that includes both general information about the nursing home as well as its score across a number of quality metrics. The explanatory variable of interest is whether the nursing home is operated by a for-profit organization or a non-profit organization/the government. The variable can be found under the column titled "Ownership Type". My outcome variable a nursing home's overall quality, which can be found under the "Overall Rating" column. This variable is measured using CMS' "Five-Star Quality Rating System," which assigns a nursing home an aggregate score based on the its ratings for health inspections, quality measures, and staffing, with more stars indicating higher quality. If I observe that non-profit- and government-operated nursing homes have higher average overall rating scores than for-profit facilities, this would provide support for my hypothesis. If it turns out that for-profit nursing homes have higher or similar average overall rating scores than non-profit- and government-operated facilities, this would provide evidence against my hypothesis.
-
-
-
-## Data visualization
+## Results
 
 ```{r}
-nursing_homes <- read_csv("NH_ProviderInfo_Oct2023.csv")
-
 nursing_homes <- nursing_homes |>
   mutate(Umbrella = case_when(
     `Ownership Type` %in% c("For profit - Corporation", "For profit - Individual", "For profit - Limited Liability company", "For profit - Partnership") ~ "For-profit",
@@ -49,16 +45,15 @@ nursing_homes <- nursing_homes |>
     `Ownership Type` %in% c("Government - Federal", "Government - State", "Government - County", "Government - City/county", "Government - City", "Government - Hospital district") ~ "Government",
     TRUE ~ "Other"
   ))
-
+```
+```{r}
 selected_columns <-  nursing_homes |> select(c('Provider Name','Umbrella','Overall Rating'))
-
 rating_table <- selected_columns |>
   group_by(Umbrella) |>
   summarize(
     avg_overall_rating = mean(`Overall Rating`, na.rm = TRUE)
   )
 ```
-
 ```{r}
 ggplot(rating_table, aes(x = Umbrella, y = avg_overall_rating, fill = Umbrella)) +
   geom_col() +
@@ -66,28 +61,30 @@ ggplot(rating_table, aes(x = Umbrella, y = avg_overall_rating, fill = Umbrella))
        y = "Average Overall Rating",
        title = "Average Overall Rating of Nursing Homes by Ownership Type")
 ```
-
-
-
-## Analysis
-
 ```{r}
 knitr::kable(
   rating_table,
-  col.names = c("Umbrella", "Average Overall Rating")
+  col.names = c("Umbrella", "Average Overall Rating"),
+  digits = 2
 )
 ```
-The results reveal that, on average, nursing homes operated by for-profit organizations provide worse quality of care than those operated by non-profit organizations and the government. For-profit nursing homes received an average of 2.64/5 stars. Nursing homes operated by the government performed significantly better, receiving an average rating of 3.26/5, approximately 12.3% more stars than for-profit nursing homes received. Non-profit nursing homes performed the best of the three ownership types, receiving an average rating of 3.45/5 stars. 
+The bar plot depicts the mean overall ratings for nursing homes categorized by their ownership type. The corresponding table below the plot provides the exact numerical values of these average ratings. From the plot, it is apparent that non-profit nursing homes have the highest average overall rating (3.44/5 stars), followed by government (3.26/5 stars), and then for-profit nursing homes have the lowest average rating (2.64/5 stars) among the three categories.
+
+In addition to this visualization, I performed a regression analysis for a more nuanced understanding of this relationship. The regression analysis goes beyond the barplot by controlling for three additional factors in an attempt to isolate the effect of ownership type on the quality of care. These three factors were `State`, `Number of Certified Beds`, and `Reported Licensed Staffing Hours per Resident per Day`. I thought that the quality of care might vary by state due to differences in regulation, funding, and availability of skilled staff. In addition, I wanted to control for the size of the facility (for which I used number of certified beds as a proxy) because I thought that larger facilities might have different management practices, resources, and staffing levels, all of which would impact the quality of care. Lastly, I wanted to control for staffing levels of skilled nurses because I assumed that higher levels were associated with better care.
 
 ```{r}
 lm_model <- lm(`Overall Rating` ~ Umbrella + `State` + `Number of Certified Beds` + `Reported Licensed Staffing Hours per Resident per Day`, data = nursing_homes)
 modelsummary::modelsummary(lm_model, statistic = c("s.e. = {std.error}",
                                                    "p = {p.value}"), gof_map = c("nobs", "r.squared", "adj.r.squared"))
 ```
-```{r}
-ggplot(nursing_homes, aes(x = `Overall Rating`)) +
-  geom_histogram(binwidth = 1, fill = "dodgerblue", color = "black") +
-  labs(x = "Overall Rating", y = "Frequency")
-```
+The intercept (1.594) is the expected average overall rating for the baseline group, which in my case is for-profit nursing homes in the state of Alaska, when the `Number of Certified Beds` and `Reported Licensed Staffing Hours per Resident per Day` are zero. While it's important to note that the intercept is significant (p<0.001), it's impossible for a nursing home to have zero beds or staffing hours. Thus, the practical interpretation of the intercept is limited to being a part of the baseline against which other groups' ratings are compared.
+
+The coefficients for `UmbrellaGovernment` and `UmbrellaNon-profit` suggest that, holding other factors constant, government and non-profit nursing homes are rated higher than for-profit ones by approximately 0.56 and 0.59 points, respectively. The size of the coefficients is significant, indicating that the type of ownership is associated with a noticeable difference in ratings. These coefficients are statistically significant (p<0.001), suggesting that there is strong evidence to conclude that the observed positive relationship between government/non-profit nursing homes and higher overall rating is not occurring by chance. While the statistical significance gives me confidence in the reliability of these associations, the cross-sectional nature of the data limits the ability to infer direct causality. A before-and-after study whereby nursing homes changed ownership, for example, would ideally be necessary to assert causal effects. 
+
+When considering the impact of states, we see varied coefficients, which imply that the location of a nursing home within the United States also influences its overall rating. For example, the coefficient for `StateAL` is 0.833 with a p-value of 0.011, suggesting that nursing homes in Alabama are rated higher than nursing homes in Alaska by approximately 0.83 points (holding all other variables constant), and that this result is statistically significant. On the other hand, the coefficient for `StatePR` (Puerto Rico) is -1.020 with a p-value of 0.098, suggesting a potential lower rating for nursing homes in Puerto Rico compared to Alaska (holding all other variables equal), but we cannot be as confident about this result because of the high p-value.
+
+The coefficients for `Number of Certified Beds` and `Reported Licensed Staffing Hours per Resident per Day` are -0.004 and 0.614, respectively. Both are statistically significant (p<0.001), indicating that as the number of beds increases, the overall rating slightly decreases, and as the staffing hours increase, the overall rating significantly increases. This suggests a larger facility may face challenges in maintaining a higher quality of care, while more staffing hours contribute positively to the quality of care.
 
 
+## Conclusion
+The analysis conducted on nursing home quality ratings revealed notable insights into how different factors influence these ratings. My hypothesis that non-profit and government-owned nursing homes provide better quality of care than for-profit ones found substantial support. Based on the coefficients from my regression analysis, non-profit nursing homes have an average overall rating that is approximately 37.14% higher than for-profit ones, while government-owned nursing homes have an average rating about 35.13% higher than for-profit ones. Additionally, this model indicated that location (state) and staffing hours positively correlate with higher ratings, while larger facilities (more beds) tend to have slightly lower ratings. There are some potential limitations to my study that should not be ignored. As I mentioned in my results section, while the cross-sectional design is useful for identifying associations at a particular point in time, it is limited in its ability to infer causality. Additionally, there is the threat of unmeasured confounders. For instance, factors like patient demographics and facility age/infrastructure, which could influence ratings, were not included in the dataset, and therefore, were not included in my regression model. With additional resources, I believe my analysis could be enhanced by incorporating longitudinal data to track changes in nursing homes over time. This would allow me to observe how the quality of care in nursing homes evolves over time, which I could then correlate with changes in ownership. Longitudinal data would also enable me to examine potential lagged effects of ownership changes on quality metrics.  
